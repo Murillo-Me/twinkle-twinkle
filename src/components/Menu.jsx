@@ -34,6 +34,7 @@ export function Menu({ toggleMenu }) {
                     id="extrinsic"
                     ref={tooltip === 'extrinsic' ? reference : null}
                     href="https://astronomy.swin.edu.au/cosmos/V/Variable+Stars"
+                    target="_blank"
                 >
                     Extrinsic
                 </MenuCategoryLink>
@@ -45,6 +46,7 @@ export function Menu({ toggleMenu }) {
                     id="intrinsic"
                     ref={tooltip === 'intrinsic' ? reference : null}
                     href="https://astronomy.swin.edu.au/cosmos/V/Variable+Stars"
+                    target="_blank"
                 >
                     Intrinsic
                 </MenuCategoryLink>

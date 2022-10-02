@@ -5,7 +5,9 @@ export function Info({ content }) {
         <InfoContainer>
             <InfoTitle>{content.title}</InfoTitle>
             <InfoText>{content.text}</InfoText>
-            <InfoLink href={content.link}>Click for detailed content</InfoLink>
+            <InfoLink href={content.link} target="_blank">
+                Click for detailed content
+            </InfoLink>
         </InfoContainer>
     );
 }
