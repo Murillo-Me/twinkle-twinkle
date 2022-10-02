@@ -2,10 +2,12 @@ import { useState } from 'react';
 import {
     MenuContainer,
     MenuCategory,
+    MenuCategoryLink,
     MenuButton,
     Tooltip,
     TooltipTitle,
     TooltipText,
+    DiagramButton,
 } from '../styles';
 import { useFloating } from '@floating-ui/react-dom';
 import pulsatingImg from '../assets/pulsating.png';
@@ -26,24 +28,26 @@ export function Menu({ toggleMenu }) {
     return (
         <MenuContainer>
             <MenuCategory style={{ left: '-100px' }}>
-                <h2
+                <MenuCategoryLink
                     onMouseOver={handleTooltip}
                     onMouseOut={handleTooltip}
                     id="extrinsic"
                     ref={tooltip === 'extrinsic' ? reference : null}
+                    href="https://astronomy.swin.edu.au/cosmos/V/Variable+Stars"
                 >
                     Extrinsic
-                </h2>
+                </MenuCategoryLink>
             </MenuCategory>
             <MenuCategory style={{ right: '-100px' }}>
-                <h2
+                <MenuCategoryLink
                     onMouseOver={handleTooltip}
                     onMouseOut={handleTooltip}
                     id="intrinsic"
                     ref={tooltip === 'intrinsic' ? reference : null}
+                    href="https://astronomy.swin.edu.au/cosmos/V/Variable+Stars"
                 >
                     Intrinsic
-                </h2>
+                </MenuCategoryLink>
             </MenuCategory>
             <MenuButton
                 onMouseOver={handleTooltip}
@@ -115,6 +119,7 @@ export function Menu({ toggleMenu }) {
                     </TooltipText>
                 </Tooltip>
             )}
+            <DiagramButton>HR Diagram for Nearby Stars</DiagramButton>
         </MenuContainer>
     );
 }
