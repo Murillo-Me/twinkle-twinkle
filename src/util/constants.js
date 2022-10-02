@@ -35,6 +35,13 @@ export const content = [
         link: 'http://www.sai.msu.su/gcvs/gcvs/gcvs5/vartype.htm',
     },
     {
+        id: 'hr-diagram',
+        title: 'Hertzsprung-Russell diagram for nearby stars',
+        tooltip_text: 'Click to know more and see it for yourself!',
+        text: 'A plot of the luminosity (left vertical axis), in units of the Sun’s absolute luminosity denoted L, against the effective temperature of the star’s disk in degrees kelvin, designated K (bottom horizontal axis) for 22,000 stars in the catalogue of the HIPPARCOS satellite. This plot is known as the Hertzsprung-Russell diagram, abbreviated H-R diagram. The spectral class is also denoted (bottom horizontal axis), as well as the absolute visual magnitude (right vertical axis) and color index, B-V (top horizontal axis). Most stars, including our Sun, lie along the main sequence, which extends from the high temperature, blue-white stars at the top left to the low temperature, red stars at the bottom right. The Sun is a main-sequence star with an absolute visual magnitude MV = 4.8 and color index B-V = 0.68. The radiation from all main-sequence stars is sustained by hydrogen-burning reactions in their cores. Stars of about the Sun’s mass evolve into helium-burning red giant stars, located in the upper-right side of the diagram. Very rare, bright giant stars, and extremely scarce and luminous supergiants are found above the giant stars and along the top of the diagram. Faint and initially hot white dwarf stars are located in the lower left side. Owing to their low luminosity, these end points of stellar evolution are relatively difficult to observe. (Data points courtesy of ESA/HIPPARCOS mission.)',
+        link: 'https://ase.tufts.edu/cosmos/view_picture.asp?id=1404',
+    },
+    {
         id: 'extrinsic',
         title: '',
         tooltip_text:

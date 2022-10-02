@@ -85,7 +85,7 @@ export function Eruptive({ groupRef, centerStar, eruption, pos }) {
             </mesh>
             <mesh position={[pos, 0, 0]} ref={eruption} scale={[1.2, 0.6, 0.6]}>
                 <sphereBufferGeometry />
-                <meshStandardMaterial map={colorMap} />
+                <meshStandardMaterial map={colorMap} color="white" />
             </mesh>
         </group>
     );

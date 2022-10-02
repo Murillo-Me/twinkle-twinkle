@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const BackButton = styled.button`
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 80px;
     height: 80px;
@@ -37,6 +40,9 @@ export const InfoContainer = styled.div`
     background-color: rgba(64, 59, 54, 0.8);
     border-radius: 20px;
     border: 1px solid black;
+    &.larger {
+        height: 700px;
+    }
 `;
 
 export const InfoTitle = styled.h2`
@@ -218,6 +224,10 @@ export const TooltipText = styled.p`
 `;
 
 export const HRDiagram = styled.img`
-    width: 200px;
+    z-index: 10;
+    position: absolute;
+    left: 20vw;
+    top: 240px;
+    width: 600px;
     height: auto;
 `;

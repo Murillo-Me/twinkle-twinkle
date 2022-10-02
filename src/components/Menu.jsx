@@ -17,7 +17,7 @@ import rotatingImg from '../assets/rotating.png';
 import eruptiveImg from '../assets/eruptive.png';
 import { content } from '../util/constants';
 
-export function Menu({ toggleMenu }) {
+export function Menu({ toggleMenu, toggleDiagramScreen }) {
     const { x, y, reference, floating, strategy } = useFloating();
     const [tooltip, setTooltip] = useState('');
 
@@ -121,7 +121,9 @@ export function Menu({ toggleMenu }) {
                     </TooltipText>
                 </Tooltip>
             )}
-            <DiagramButton>HR Diagram for Nearby Stars</DiagramButton>
+            <DiagramButton onClick={toggleDiagramScreen}>
+                HR Diagram for Nearby Stars
+            </DiagramButton>
         </MenuContainer>
     );
 }
