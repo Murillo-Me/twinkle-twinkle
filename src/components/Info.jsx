@@ -1,12 +1,10 @@
 import { InfoContainer, InfoTitle, InfoText } from '../styles.js';
 
-export function Info({ title, text }) {
-    console.log(title);
-
+export function Info({ content }) {
     return (
         <InfoContainer>
-            <InfoTitle>{title}</InfoTitle>
-            <InfoText>{text}</InfoText>
+            <InfoTitle>{content.title}</InfoTitle>
+            <InfoText>{content.text}</InfoText>
         </InfoContainer>
     );
 }

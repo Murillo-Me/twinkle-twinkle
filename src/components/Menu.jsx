@@ -17,11 +17,8 @@ export function Menu({ toggleMenu }) {
     const [tooltip, setTooltip] = useState('');
 
     function handleTooltip(e) {
-        console.log(e);
         setTooltip(e.type === 'mouseover' ? e.currentTarget.id : '');
     }
-
-    console.log({ x, y, reference, floating, strategy });
 
     return (
         <MenuContainer>
@@ -62,11 +59,7 @@ export function Menu({ toggleMenu }) {
                     style={{ position: strategy, top: y ?? 0, left: x ?? 0 }}
                 >
                     <TooltipTitle>
-                        {
-                            content.find((item) => item.id === tooltip)[
-                                'tooltip_title'
-                            ]
-                        }
+                        {content.find((item) => item.id === tooltip)['title']}
                     </TooltipTitle>
                     <TooltipText>
                         {

@@ -4,11 +4,8 @@ import { Intro } from './components/Intro';
 import { Info } from './components/Info';
 import { Navigation } from './components/Navigation';
 import { Scene } from './components/Scene';
-
-// import { Physics, usePlane, useBox } from "@react-three/cannon";
-
-const pulsatingTextExample =
-    "Pulsating variables are stars showing periodic expansion and contraction of their surface layers. The pulsations may be radial or nonradial. A radially pulsating star remains spherical in shape, while in the case of nonradial pulsations the star's shape periodically deviates from a sphere, and even neighboring zones of its surface may have opposite pulsation phases.";
+import { content } from './util/constants';
+import { BackButton } from './styles';
 
 function App() {
     const [variableType, setVariableType] = useState('pulsating');
@@ -26,10 +23,14 @@ function App() {
                 <Intro toggleMenu={toggleMenu} />
             ) : (
                 <>
+                    <BackButton
+                        onClick={() => setOnMenu((prev) => !prev)}
+                    ></BackButton>
                     <Navigation setVariableType={setVariableType}></Navigation>
                     <Info
-                        title="Rotating variable star"
-                        text={pulsatingTextExample}
+                        content={content.find(
+                            (item) => item.id === variableType
+                        )}
                     ></Info>
                     <Canvas
                         camera={{ fov: 75, position: [0, 2, 4] }}
