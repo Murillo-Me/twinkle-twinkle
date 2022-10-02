@@ -75,3 +75,22 @@ export const MenuButton = styled.div`
     // }
     transition: transform ease 0.5s;
 `;
+
+export const Tooltip = styled.div`
+    background-color: rgba(50, 50, 50, 0.7);
+    height: 100px;
+    min-width: 100%;
+    border-radius: 16px;
+    color: white;
+    padding-bottom: 10px;
+`;
+
+export const TooltipTitle = styled.h2`
+    color: white;
+    margin-left: 20px;
+`;
+
+export const TooltipText = styled.p`
+    color: darkgrey;
+    margin-left: 30px;
+`;
