@@ -6,6 +6,7 @@ import { Navigation } from './components/Navigation';
 import { Scene } from './components/Scene';
 import { content } from './util/constants';
 import { BackButton } from './styles';
+import { FaArrowLeft } from 'react-icons/fa';
 
 function App() {
     const [variableType, setVariableType] = useState('pulsating');
@@ -23,9 +24,9 @@ function App() {
                 <Intro toggleMenu={toggleMenu} />
             ) : (
                 <>
-                    <BackButton
-                        onClick={() => setOnMenu((prev) => !prev)}
-                    ></BackButton>
+                    <BackButton onClick={() => setOnMenu((prev) => !prev)}>
+                        <FaArrowLeft></FaArrowLeft>
+                    </BackButton>
                     <Navigation setVariableType={setVariableType}></Navigation>
                     <Info
                         content={content.find(
@@ -33,7 +34,7 @@ function App() {
                         )}
                     ></Info>
                     <Canvas
-                        camera={{ fov: 75, position: [0, 2, 4] }}
+                        camera={{ fov: 75, position: [0, 0, 4] }}
                         style={{
                             width: '95vw',
                             height: '95vh',

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {
     MenuContainer,
+    MenuCategory,
     MenuButton,
     Tooltip,
     TooltipTitle,
@@ -9,7 +10,9 @@ import {
 import { useFloating } from '@floating-ui/react-dom';
 import pulsatingImg from '../assets/pulsating.png';
 import cataclysmImg from '../assets/cataclysm.png';
-import eclipsingImg from '../assets/eclipsing.png';
+import binaryImg from '../assets/eclipsing.png';
+import rotatingImg from '../assets/rotating.png';
+import eruptiveImg from '../assets/eruptive.png';
 import { content } from '../util/constants';
 
 export function Menu({ toggleMenu }) {
@@ -22,23 +25,42 @@ export function Menu({ toggleMenu }) {
 
     return (
         <MenuContainer>
+            <MenuCategory style={{ left: '-100px' }}>
+                <h2
+                    onMouseOver={handleTooltip}
+                    onMouseOut={handleTooltip}
+                    id="extrinsic"
+                    ref={tooltip === 'extrinsic' ? reference : null}
+                >
+                    Extrinsic
+                </h2>
+            </MenuCategory>
+            <MenuCategory style={{ right: '-100px' }}>
+                <h2
+                    onMouseOver={handleTooltip}
+                    onMouseOut={handleTooltip}
+                    id="intrinsic"
+                    ref={tooltip === 'intrinsic' ? reference : null}
+                >
+                    Intrinsic
+                </h2>
+            </MenuCategory>
             <MenuButton
                 onMouseOver={handleTooltip}
                 onMouseOut={handleTooltip}
                 ref={tooltip === 'pulsating' ? reference : null}
                 id="pulsating"
-                style={{ marginLeft: '50px', marginRight: 'auto' }}
+                style={{ marginLeft: 'auto', marginRight: '50px' }}
                 onClick={(e) => toggleMenu(e.currentTarget.id)}
             >
                 <img src={pulsatingImg} alt="" />
             </MenuButton>
             <MenuButton
-                // ref={reference}
                 onMouseOver={handleTooltip}
                 onMouseOut={handleTooltip}
                 ref={tooltip === 'cataclysmic' ? reference : null}
                 id="cataclysmic"
-                style={{ marginLeft: 'auto', marginRight: '50px' }}
+                style={{ marginLeft: '0', marginRight: 'auto' }}
                 onClick={(e) => toggleMenu(e.currentTarget.id)}
             >
                 <img src={cataclysmImg} alt="" />
@@ -46,15 +68,38 @@ export function Menu({ toggleMenu }) {
             <MenuButton
                 onMouseOver={handleTooltip}
                 onMouseOut={handleTooltip}
-                ref={tooltip === 'binary' ? reference : null}
-                id="binary"
-                style={{ marginLeft: '50px', marginRight: 'auto' }}
+                ref={tooltip === 'eruptive' ? reference : null}
+                id="eruptive"
+                style={{ marginLeft: 'auto', marginRight: '180px' }}
                 onClick={(e) => toggleMenu(e.currentTarget.id)}
             >
-                <img src={eclipsingImg} alt="" />
+                <img src={eruptiveImg} alt="" />
+            </MenuButton>
+            <MenuButton
+                onMouseOver={handleTooltip}
+                onMouseOut={handleTooltip}
+                ref={tooltip === 'binary' ? reference : null}
+                id="binary"
+                style={{ marginLeft: '150px', marginRight: 'auto' }}
+                onClick={(e) => toggleMenu(e.currentTarget.id)}
+            >
+                <img src={binaryImg} alt="" />
+            </MenuButton>
+            <MenuButton
+                onMouseOver={handleTooltip}
+                onMouseOut={handleTooltip}
+                ref={tooltip === 'rotating' ? reference : null}
+                id="rotating"
+                style={{ marginLeft: 'auto', marginRight: '0px' }}
+                onClick={(e) => toggleMenu(e.currentTarget.id)}
+            >
+                <img src={rotatingImg} alt="" />
             </MenuButton>
             {tooltip && (
                 <Tooltip
+                    className={
+                        tooltip.substring(2) === 'trinsic' ? 'category' : ''
+                    }
                     ref={floating}
                     style={{ position: strategy, top: y ?? 0, left: x ?? 0 }}
                 >

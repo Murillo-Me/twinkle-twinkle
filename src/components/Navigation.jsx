@@ -21,6 +21,14 @@ export function Navigation({ setVariableType }) {
                 starType="cataclysmic"
                 setVariableType={setVariableType}
             ></NavButton>
+            <NavButton
+                starType="rotating"
+                setVariableType={setVariableType}
+            ></NavButton>
+            <NavButton
+                starType="eruptive"
+                setVariableType={setVariableType}
+            ></NavButton>
         </NavContainer>
     );
 }

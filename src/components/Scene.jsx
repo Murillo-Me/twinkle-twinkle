@@ -1,10 +1,11 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars } from '@react-three/drei';
-import { Star, BinaryStar, CataclysmicStar } from './Mesh/Stars';
+import { Star, BinaryStar, CataclysmicStar, Eruptive } from './Mesh/Stars';
 import {
     brightnessSettings,
     expansionSettings,
+    eruptionSettings,
     canAnimate,
 } from '../util/constants';
 
@@ -16,7 +17,11 @@ const { lowerScale, upperScale, scaleStep } = expansionSettings;
 
 let { scaleChange } = expansionSettings;
 
-const { canRotate, canRotateIndividually, canExpand } = canAnimate;
+const { lowerErupt, upperErupt, eruptStep } = eruptionSettings;
+
+let { eruptChange } = eruptionSettings;
+
+const { canRotate, canRotateIndividually, canExpand, canErupt } = canAnimate;
 
 export function Scene({ variableType }) {
     let brightness = 0.8;
@@ -46,6 +51,7 @@ export function Scene({ variableType }) {
         }
 
         if (canRotate.includes(variableType)) {
+            if (!groupRef.current) return;
             groupRef.current.rotation.y += -0.025;
         }
 
@@ -53,6 +59,20 @@ export function Scene({ variableType }) {
             if (!centerStar.current) return;
             centerStar.current.rotation.y += 0.02;
             otherStar.current.rotation.y += -0.05;
+        }
+
+        if (canErupt.includes(variableType)) {
+            if (!centerStar.current) return;
+            centerStar.current.rotation.y += 0.02;
+            otherStar.current.rotation.z += -0.02;
+            otherStar.current.rotation.x += -0.05;
+
+            if (!otherStar.current) return;
+            let previousScale = otherStar.current.scale.x ?? 1;
+            if (previousScale < lowerErupt) eruptChange = eruptStep;
+            if (previousScale > upperErupt) eruptChange = -eruptStep;
+            const newScale = previousScale + eruptChange;
+            otherStar.current.scale.set(newScale, 0.3, 0.3);
         }
     });
 
@@ -63,6 +83,9 @@ export function Scene({ variableType }) {
             <ambientLight ref={light} intensity={brightness} />
             {/* <spotLight position={[10, 15, 10]} angle={0.3} /> */}
             {variableType === 'pulsating' && (
+                <Star groupRef={groupRef} pos={-1.5} />
+            )}
+            {variableType === 'rotating' && (
                 <Star groupRef={groupRef} pos={-1.5} />
             )}
             {variableType === 'binary' && (
@@ -80,8 +103,16 @@ export function Scene({ variableType }) {
                     centerStar={centerStar}
                     otherStar={otherStar}
                     massTransfer={massTransfer}
+                    pos={-0.8}
+                    pos2={-3.8}
+                />
+            )}
+            {variableType === 'eruptive' && (
+                <Eruptive
+                    groupRef={groupRef}
+                    centerStar={centerStar}
+                    eruption={otherStar}
                     pos={-1.5}
-                    pos2={-4.5}
                 />
             )}
         </>

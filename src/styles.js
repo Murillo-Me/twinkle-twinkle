@@ -7,17 +7,21 @@ export const BackButton = styled.button`
     height: 80px;
     background-color: rgba(50, 50, 50, 0.6);
     font-color: white;
-    font-size: bold;
+    font-weight: bold;
+    font-size: 2rem;
     top: 50px;
     left: 200px;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px white;
+    border: none;
+    box-shadow: 1px 1px 5px white;
+    color: white;
     // border: none;
 
     &:hover {
-        box-shadow: 5px 5px 15px white;
+        box-shadow: 3px 3px 15px white;
     }
+    transition: box-shadow ease 0.2s;
 `;
 
 export const InfoContainer = styled.div`
@@ -67,28 +71,51 @@ export const Button = styled.button`
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    box-shadow: 2px 2px 5px white;
+    box-shadow: 1px 1px 5px white;
+    border: none;
 
     &:hover {
-        box-shadow: 5px 5px 15px white;
+        box-shadow: 3px 3px 15px white;
     }
+    transition: box-shadow ease 0.2s;
 `;
 
 export const MenuContainer = styled.div`
     z-index: 10;
     position: absolute;
-    top: 100px;
-    left: 30vw;
-    width: 40vw;
-    height: 80vh;
+    top: 150px;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+`;
+
+export const MenuCategory = styled.div`
+    z-index: -10;
+    position: absolute;
+    top: -50px;
+    width: 500px;
+    height: 800px;
+    padding-inline: 20px;
+    padding-bottom: 20;
+    opacity: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    &:hover {
+        opacity: 1;
+        border: 1px solid white;
+    }
+    border-radius: 10px;
 `;
 
 export const MenuButton = styled.div`
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     // background-color: grey;
     cursor: pointer;
     &:hover {
@@ -103,10 +130,14 @@ export const MenuButton = styled.div`
 export const Tooltip = styled.div`
     background-color: rgba(50, 50, 50, 0.7);
     height: 100px;
-    min-width: 100%;
+    width: 700px;
     border-radius: 16px;
     color: white;
     padding-bottom: 10px;
+    &.category {
+        height: 200px;
+        font-size: 1.1rem;
+    }
 `;
 
 export const TooltipTitle = styled.h2`
