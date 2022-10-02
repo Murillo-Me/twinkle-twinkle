@@ -38,14 +38,14 @@ export const content = [
         id: 'extrinsic',
         title: '',
         tooltip_text:
-            'Eclipsing binaries — where a binary star system’s brightness changes because one orbiting companion passes in front of the other.                    Rotating stars — dark or bright areas on the stellar surface may cause small changes in apparent brightness as the star rotates. Click to open the Reference.',
+            'Eclipsing binaries — where a binary star system’s brightness changes because one orbiting companion passes in front of the other.                    Rotating stars — dark or bright areas on the stellar surface may cause small changes in apparent brightness as the star rotates. Click to know more.',
         link: 'https://astronomy.swin.edu.au/cosmos/V/Variable+Stars',
     },
     {
         id: 'intrinsic',
         title: '',
         tooltip_text:
-            'Pulsating variables — stars which periodically expand and contract, such as Cepheids, RR Lyrae stars, RV Tauri stars and Long Period Variables.                    Eruptive variables — which have flares or mass ejections from their surface.                    Cataclysmic or explosive variables — dramatic changes in brightness are caused by violent thermonuclear events or catastrophic explosions resulting in novae or supernovae. Click to open the Reference.',
+            'Pulsating variables — stars which periodically expand and contract, such as Cepheids, RR Lyrae stars, RV Tauri stars and Long Period Variables.                    Eruptive variables — which have flares or mass ejections from their surface.                    Cataclysmic or explosive variables — dramatic changes in brightness are caused by violent thermonuclear events or catastrophic explosions resulting in novae or supernovae. Click to know more.',
         link: 'https://astronomy.swin.edu.au/cosmos/V/Variable+Stars',
     },
 ];
