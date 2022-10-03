@@ -84,7 +84,6 @@ export function Scene({ variableType }) {
             <OrbitControls />
             <Stars />
             <ambientLight ref={light} intensity={brightness} />
-            {/* <spotLight position={[10, 15, 10]} angle={0.3} /> */}
             {variableType === 'pulsating' && (
                 <Star groupRef={groupRef} pos={-1.5} />
             )}
