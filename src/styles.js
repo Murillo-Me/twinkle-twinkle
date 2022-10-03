@@ -36,7 +36,7 @@ export const InfoContainer = styled.div`
     left: 55vw;
     top: 20vh;
     width: 40%;
-    height: 520px;
+    height: 540px;
     background-color: rgba(64, 59, 54, 0.8);
     border-radius: 20px;
     border: 1px solid black;
@@ -60,6 +60,7 @@ export const InfoTitle = styled.h2`
 export const InfoText = styled.p`
     margin-left: 30px;
     margin-right: 25px;
+    margin-block: 2px;
     color: lightgrey;
     text-indent: 40px;
     font-size: 1.2rem;
@@ -136,7 +137,7 @@ export const MenuContainer = styled.div`
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 150px;
+    top: 100px;
     left: 20vw;
     width: 60vw;
     height: 60vh;
@@ -170,7 +171,7 @@ export const MenuCategory = styled.div`
     position: absolute;
     top: -50px;
     width: 500px;
-    height: 800px;
+    height: 810px;
     padding-inline: 20px;
     padding-bottom: 20;
     opacity: 0;
@@ -216,14 +217,14 @@ export const MenuButton = styled.div`
 
 export const Tooltip = styled.div`
     z-index: 100;
-    background-color: rgba(50, 50, 50, 0.8);
+    background-color: rgba(50, 50, 50, 0.9);
     height: 100px;
     width: 700px;
     border-radius: 16px;
     color: white;
     padding-bottom: 10px;
     &.category {
-        height: 200px;
+        height: 260px;
         font-size: 1.1rem;
     }
 `;

@@ -64,12 +64,12 @@ export function Menu({ toggleMenu, toggleDiagramScreen }) {
             <MenuButton
                 onMouseOver={handleTooltip}
                 onMouseOut={handleTooltip}
-                ref={tooltip === 'cataclysmic' ? reference : null}
-                id="cataclysmic"
+                ref={tooltip === 'rotating' ? reference : null}
+                id="rotating"
                 style={{ marginLeft: '0', marginRight: 'auto' }}
                 onClick={(e) => toggleMenu(e.currentTarget.id)}
             >
-                <img src={cataclysmImg} alt="" />
+                <img src={rotatingImg} alt="" />
             </MenuButton>
             <MenuButton
                 onMouseOver={handleTooltip}
@@ -94,12 +94,12 @@ export function Menu({ toggleMenu, toggleDiagramScreen }) {
             <MenuButton
                 onMouseOver={handleTooltip}
                 onMouseOut={handleTooltip}
-                ref={tooltip === 'rotating' ? reference : null}
-                id="rotating"
+                ref={tooltip === 'cataclysmic' ? reference : null}
+                id="cataclysmic"
                 style={{ marginLeft: 'auto', marginRight: '0px' }}
                 onClick={(e) => toggleMenu(e.currentTarget.id)}
             >
-                <img src={rotatingImg} alt="" />
+                <img src={cataclysmImg} alt="" />
             </MenuButton>
             {tooltip && (
                 <Tooltip
@@ -112,13 +112,12 @@ export function Menu({ toggleMenu, toggleDiagramScreen }) {
                     <TooltipTitle>
                         {content.find((item) => item.id === tooltip)['title']}
                     </TooltipTitle>
-                    <TooltipText>
-                        {
-                            content.find((item) => item.id === tooltip)[
-                                'tooltip_text'
-                            ]
-                        }
-                    </TooltipText>
+
+                    {content
+                        .find((item) => item.id === tooltip)
+                        ['tooltip_text'].map((text, index) => (
+                            <TooltipText key={index}>{text}</TooltipText>
+                        ))}
                 </Tooltip>
             )}
             <DiagramButton onClick={toggleDiagramScreen}>
