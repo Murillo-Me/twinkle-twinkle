@@ -21,7 +21,8 @@ const { lowerErupt, upperErupt, eruptStep } = eruptionSettings;
 
 let { eruptChange } = eruptionSettings;
 
-const { canRotate, canRotateIndividually, canExpand, canErupt } = canAnimate;
+const { canRotate, canRotateIndividually, canExpand, canErupt, canPulse } =
+    canAnimate;
 
 export function Scene({ variableType }) {
     let brightness = 0.8;
@@ -32,16 +33,18 @@ export function Scene({ variableType }) {
     const massTransfer = useRef();
 
     useFrame(() => {
-        // Setting brightness cycle
-        if (!light.current) return;
-        if (light.current.intensity < lowerBrightness)
-            lightChange = brightnessStep;
-        if (light.current.intensity > upperBrightness)
-            lightChange = -brightnessStep;
-        light.current.intensity += lightChange;
+        if (canPulse.includes(variableType)) {
+            // Setting brightness cycle
+            if (!light.current) return;
+            if (light.current.intensity < lowerBrightness)
+                lightChange = brightnessStep;
+            if (light.current.intensity > upperBrightness)
+                lightChange = -brightnessStep;
+            light.current.intensity += lightChange;
+        }
 
-        // Setting expansion and compression cycle
         if (canExpand.includes(variableType)) {
+            // Setting expansion and compression cycle
             if (!groupRef.current) return;
             let previousScale = groupRef.current.scale.x ?? 1;
             if (previousScale < lowerScale) scaleChange = scaleStep;
@@ -52,7 +55,7 @@ export function Scene({ variableType }) {
 
         if (canRotate.includes(variableType)) {
             if (!groupRef.current) return;
-            groupRef.current.rotation.y += -0.025;
+            groupRef.current.rotation.y += -0.015;
         }
 
         if (canRotateIndividually.includes(variableType)) {
@@ -63,9 +66,9 @@ export function Scene({ variableType }) {
 
         if (canErupt.includes(variableType)) {
             if (!centerStar.current) return;
-            centerStar.current.rotation.y += 0.02;
+            centerStar.current.rotation.y += 0.01;
             otherStar.current.rotation.z += -0.02;
-            otherStar.current.rotation.x += -0.05;
+            otherStar.current.rotation.x += -0.03;
 
             if (!otherStar.current) return;
             let previousScale = otherStar.current.scale.x ?? 1;

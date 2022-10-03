@@ -60,14 +60,14 @@ export const content = [
 export const brightnessSettings = {
     lightChange: 0.05,
     lowerBrightness: 0.3,
-    upperBrightness: 2,
-    brightnessStep: 0.03,
+    upperBrightness: 10,
+    brightnessStep: 0.075,
 };
 
 export const expansionSettings = {
     scaleChange: 0.2,
     lowerScale: 0.95,
-    upperScale: 1.05,
+    upperScale: 1.2,
     scaleStep: 0.002,
 };
 
@@ -83,4 +83,5 @@ export const canAnimate = {
     canRotateIndividually: ['binary', 'cataclysmic'],
     canExpand: ['pulsating'],
     canErupt: ['eruptive'],
+    canPulse: ['pulsating', 'rotating'],
 };

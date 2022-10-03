@@ -43,12 +43,18 @@ export const InfoContainer = styled.div`
     &.larger {
         height: 700px;
     }
+    @media (max-width: 1366px) {
+        top: 5vh;
+    }
 `;
 
 export const InfoTitle = styled.h2`
     margin-top: 30px;
     margin-left: 40px;
     color: white;
+    @media (max-width: 1366px) {
+        font-size: 1.3rem;
+    }
 `;
 
 export const InfoText = styled.p`
@@ -58,6 +64,10 @@ export const InfoText = styled.p`
     text-indent: 40px;
     font-size: 1.2rem;
     line-height: 1.5rem;
+
+    @media (max-width: 1366px) {
+        font-size: 1rem;
+    }
 `;
 
 export const InfoLink = styled.a`
@@ -82,6 +92,10 @@ export const InfoLink = styled.a`
         box-shadow: 2px 2px 3px black;
     }
     transition: transform ease 0.15s, box-shadow ease 0.15s;
+
+    @media (max-width: 1366px) {
+        font-size: 1rem;
+    }
 `;
 
 export const NavContainer = styled.ul`
@@ -91,6 +105,10 @@ export const NavContainer = styled.ul`
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @media (max-width: 1366px) {
+        bottom: 50px;
+    }
 `;
 
 export const Button = styled.button`
@@ -188,14 +206,11 @@ export const MenuButton = styled.div`
     align-items: center;
     width: 150px;
     height: 150px;
-    // background-color: grey;
     cursor: pointer;
     &:hover {
         transform: scale(1.3);
     }
-    // &:hover.pulsating {
-    //     filter: hue-rotate(90);
-    // }
+
     transition: transform ease 0.5s;
 `;
 
