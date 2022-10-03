@@ -8,7 +8,7 @@ The stars above are constantly changing, but usually these changes are too slow 
 
 #### High-Level Project Summary
 
-To get a better understanding to how the stars in our night skies change theirs brightness, we developed a solution to engage those seeking this explanation. For this, we build an interactive website, with the basic explanation of how variable stars exist and most of their types. This solution solves our challenge by bringing visual elements to help explain while including buttons to help users navigate through the different types of variable stars. It is important as just saying that stars change their brightness is not the best way of teaching, because of this we thought of bringing a new and animated way to make users learn more about the different type of stars and why they change.
+To get a better understanding of how the stars in our night skies change their brightness, we developed a solution to engage those seeking this explanation. For this, we build an interactive website, with the basic explanation of how variable stars exist and most of their types. This solution solves our challenge by bringing visual elements to help explain while including buttons to help users navigate through the different types of variable stars. It is important as just saying that stars change their brightness is not the best way of teaching, because of this we thought of bringing a new and animated way to make users learn more about the different type of stars and why they change.
 
 We developed a website that serves as an interactive tool to make its users learn more about variable stars and its types. We brought an impactful way to visualize how they correlate with their brightness.
 
